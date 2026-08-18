@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>علیرضا سالمی</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>علیرضا سالمی</title>
+
+  <meta name="description" content="سایت رسمی علیرضا سالمی؛ شنیدن و دانلود آهنگ‌های علیرضا سالمی با کیفیت ۳۲۰.">
+
+  <meta name="keywords" content="علیرضا سالمی, آهنگ علیرضا سالمی, دانلود آهنگ علیرضا سالمی, موسیقی علیرضا سالمی">
+
+  <meta name="author" content="علیرضا سالمی">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f5f9ff 0%, #e8f0fa 100%);
+      color: #1a2a3a;
+      font-family: Tahoma, sans-serif;
+      padding: 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #1a3a5c;
+      padding-bottom: 1.8rem;
+      width: 100%;
+    }
+
+    .header h1 {
+      font-size: 2.6rem;
+      color: #0a1e33;
+    }
+
+    .header h1 span {
+      color: #1a4b7a;
+    }
+
+    .header .sub {
+      font-size: 1.05rem;
+      color: #2a4a6a;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    @media (min-width: 720px) {
+      .cards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .music-card {
+      background: #fff;
+      border-radius: 32px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 40px rgba(20,50,90,0.12);
+      border: 1px solid rgba(30,70,130,0.08);
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      border: 2px solid #1a4b7a;
+      background: #dce8f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .song-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0a1e33;
+    }
+
+    .song-title .artist {
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #2a5a7a;
+    }
+
+    .song-sub {
+      font-size: 0.85rem;
+      color: #1a3a5a;
+      margin: 0.2rem 0 0.7rem;
+      padding-right: 0.8rem;
+      border-right: 3px solid #1a4b7a;
+      min-height: 1.5rem;
+    }
+
+    .player-wrapper {
+      background: #f0f6fe;
+      border-radius: 30px;
+      padding: 0.7rem 1rem;
+      border: 1px solid #b8cde0;
+    }
+
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-play {
+      background: #1a4b7a;
+      border: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .progress-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      direction: ltr;
+      min-width: 80px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 4px;
+      background: #c8d8e8;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #1a4b7a;
+      border-radius: 10px;
+    }
+
+    .time {
+      font-size: 0.65rem;
+      color: #2a4a6a;
+      min-width: 32px;
+    }
+
+    .vol-control {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 30px;
+      border: 1px solid #b8cde0;
+    }
+
+    .vol-control input {
+      width: 35px;
+    }
+
+    .download-bar {
+      display: block;
+      width: 100%;
+      margin-top: 0.7rem;
+      padding: 0.75rem;
+      background: #1a4b7a;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-family: Tahoma, sans-serif;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+
+    .download-bar:hover {
+      background: #0a1e33;
+    }
+
+    .error-msg {
+      color: #c0392b;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      display: none;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      border-top: 2px solid #1a3a5c;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #2a4a6a;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <h1>علیرضا <span>سالمی</span></h1>
+    <div class="sub">آوازِ سردِ شب‌های بی‌خوابی</div>
+  </header>
+
+  <div class="cards-grid">
+
+    <!-- نشد -->
+    <div class="music-card" data-song="Nashod">
+
+      <div class="cover">
+        <img src="./nashod.jpg" alt="نشد">
+      </div>
+
+      <div class="song-title">
+        نشد <span class="artist">— علیرضا سالمی</span>
+      </div>
+
+      <div class="song-sub"></div>
+
+      <div class="player-wrapper">
+
+        <div class="player-controls">
+
+          <button class="btn-play">▶</button>
+
+          <div class="progress-area">
+            <span class="time current">0:00</span>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+
+            <span class="time duration">0:00</span>
+          </div>
+
+          <div class="vol-control">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.6"
+              class="volume-slider">
+          </div>
+
+        </div>
+
+        <audio preload="metadata" src="./Nashod.mp3"></audio>
+
+        <a href="#" class="download-bar">⬇ دانلود با کیفیت ۳۲۰</a>
+
+      </div>
+
+      <div class="error-msg">
+        ⚠️ فایل صوتی پیدا نشد
+      </div>
+
+    </div>
+
+
+    <!-- جسم سرد -->
+    <div class="music-card" data-song="Jesme-sard">
+
+      <div class="cover">
+        <img src="./jesmesard.jpg" alt="جسم سرد">
+      </div>
+
+      <div class="song-title">
+        جسم سرد <span class="artist">— علیرضا سالمی</span>
+      </div>
+
+      <div class="song-sub">
+        «تو قلبم بودی شدی قریبه یهو چه شد دادی فریبم»
+      </div>
+
+      <div class="player-wrapper">
+
+        <div class="player-controls">
+
+          <button class="btn-play">▶</button>
+
+          <div class="progress-area">
+            <span class="time current">0:00</span>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+
+            <span class="time duration">0:00</span>
+          </div>
+
+          <div class="vol-control">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.6"
+              class="volume-slider">
+          </div>
+
+        </div>
+
+        <audio preload="metadata" src="./Jesme-sard.mp3"></audio>
+
+        <a href="#" class="download-bar">⬇ دانلود با کیفیت ۳۲۰</a>
+
+      </div>
+
+      <div class="error-msg">
+        ⚠️ فایل صوتی پیدا نشد
+      </div>
+
+    </div>
+
+
+    <!-- سردخانه -->
+    <div class="music-card" data-song="sard-khane">
+
+      <div class="cover">
+        <img src="./sard-khane.jpg" alt="سردخانه">
+      </div>
+
+      <div class="song-title">
+        سردخانه <span class="artist">— علیرضا سالمی</span>
+      </div>
+
+      <div class="song-sub">
+        «دست دست نکن آی مرده شور بشور تن مه خستس»
+      </div>
+
+      <div class="player-wrapper">
+
+        <div class="player-controls">
+
+          <button class="btn-play">▶</button>
+
+          <div class="progress-area">
+            <span class="time current">0:00</span>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+
+            <span class="time duration">0:00</span>
+          </div>
+
+          <div class="vol-control">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.6"
+              class="volume-slider">
+          </div>
+
+        </div>
+
+        <audio preload="metadata" src="./sard-khane.mp3"></audio>
+
+        <a href="#" class="download-bar">⬇ دانلود با کیفیت ۳۲۰</a>
+
+      </div>
+
+      <div class="error-msg">
+        ⚠️ فایل صوتی پیدا نشد
+      </div>
+
+    </div>
+
+
+    <!-- روز سخت -->
+    <div class="music-card" data-song="roze-sakht">
+
+      <div class="cover">
+        <img src="./roze-sakht.jpg" alt="روز سخت">
+      </div>
+
+      <div class="song-title">
+        روز سخت <span class="artist">— علیرضا سالمی</span>
+      </div>
+
+      <div class="song-sub"></div>
+
+      <div class="player-wrapper">
+
+        <div class="player-controls">
+
+          <button class="btn-play">▶</button>
+
+          <div class="progress-area">
+            <span class="time current">0:00</span>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+
+            <span class="time duration">0:00</span>
+          </div>
+
+          <div class="vol-control">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.6"
+              class="volume-slider">
+          </div>
+
+        </div>
+
+        <audio preload="metadata" src="./roze-sakht.mp3"></audio>
+
+        <a href="#" class="download-bar">⬇ دانلود با کیفیت ۳۲۰</a>
+
+      </div>
+
+      <div class="error-msg">
+        ⚠️ فایل صوتی پیدا نشد
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <small>
+      © ۲۰۲۶ · علیرضا سالمی · تمامی حقوق محفوظ است
+    </small>
+  </footer>
+
+</div>
+
+
+<script>
+
+document.querySelectorAll('.music-card').forEach(card => {
+
+  const audio = card.querySelector('audio');
+  const playBtn = card.querySelector('.btn-play');
+  const progressFill = card.querySelector('.progress-fill');
+  const progressBar = card.querySelector('.progress-bar');
+  const currentSpan = card.querySelector('.current');
+  const durationSpan = card.querySelector('.duration');
+  const volumeSlider = card.querySelector('.volume-slider');
+  const downloadBtn = card.querySelector('.download-bar');
+  const errorMsg = card.querySelector('.error-msg');
+
+
+  function formatTime(seconds) {
+
+    if (!isFinite(seconds)) {
+      return '0:00';
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const secondsPart = Math.floor(seconds % 60);
+
+    return minutes + ':' +
+      (secondsPart < 10 ? '0' : '') +
+      secondsPart;
+
+  }
+
+
+  audio.addEventListener('loadedmetadata', function() {
+
+    durationSpan.textContent =
+      formatTime(audio.duration);
+
+    errorMsg.style.display = 'none';
+
+  });
+
+
+  audio.addEventListener('error', function() {
+
+    errorMsg.style.display = 'block';
+
+  });
+
+
+  audio.addEventListener('timeupdate', function() {
+
+    if (audio.duration) {
+
+      const percent =
+        (audio.currentTime / audio.duration) * 100;
+
+      progressFill.style.width =
+        percent + '%';
+
+      currentSpan.textContent =
+        formatTime(audio.currentTime);
+
+    }
+
+  });
+
+
+  playBtn.addEventListener('click', function() {
+
+    if (audio.paused) {
+
+      document.querySelectorAll('audio').forEach(otherAudio => {
+
+        if (otherAudio !== audio) {
+
+          otherAudio.pause();
+
+          const otherCard =
+            otherAudio.closest('.music-card');
+
+          if (otherCard) {
+
+            otherCard.querySelector('.btn-play')
+              .textContent = '▶';
+
+          }
+
+        }
+
+      });
+
+
+      audio.play()
+        .then(() => {
+
+          playBtn.textContent = '⏸';
+
+        })
+        .catch(() => {
+
+          errorMsg.style.display = 'block';
+
+        });
+
+    } else {
+
+      audio.pause();
+
+      playBtn.textContent = '▶';
+
+    }
+
+  });
+
+
+  audio.addEventListener('ended', function() {
+
+    playBtn.textContent = '▶';
+
+    progressFill.style.width = '0%';
+
+    currentSpan.textContent = '0:00';
+
+  });
+
+
+  progressBar.addEventListener('click', function(e) {
+
+    if (!audio.duration) return;
+
+    const rect =
+      progressBar.getBoundingClientRect();
+
+    const percent =
+      (e.clientX - rect.left) / rect.width;
+
+    audio.currentTime =
+      percent * audio.duration;
+
+  });
+
+
+  volumeSlider.addEventListener('input', function() {
+
+    audio.volume =
+      parseFloat(this.value);
+
+  });
+
+
+  downloadBtn.addEventListener('click', function(e) {
+
+    e.preventDefault();
+
+    const url =
+      audio.getAttribute('src');
+
+    const link =
+      document.createElement('a');
+
+    link.href = url;
+
+    link.download =
+      card.dataset.song + '.mp3';
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+  });
+
+
+  audio.volume = 0.6;
+
+});
+
+</script>
+
+</body>
+</html>
